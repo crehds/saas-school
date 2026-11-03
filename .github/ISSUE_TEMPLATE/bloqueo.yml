@@ -1,0 +1,43 @@
+name: Bloqueo
+description: Pedir ayuda cuando llevas más de 2 horas atascado.
+title: "[Bloqueo] "
+labels: ["bloqueo"]
+body:
+  - type: input
+    id: issue-relacionado
+    attributes:
+      label: Issue relacionado
+      description: Número o enlace del issue en el que estás trabajando.
+      placeholder: "#12"
+    validations:
+      required: true
+  - type: textarea
+    id: objetivo
+    attributes:
+      label: Qué intento lograr
+    validations:
+      required: true
+  - type: textarea
+    id: probado
+    attributes:
+      label: Qué probé
+      description: Lista lo que ya intentaste y lo que leíste.
+    validations:
+      required: true
+  - type: textarea
+    id: resultado
+    attributes:
+      label: Qué error o resultado obtengo
+      description: Incluye el mensaje de error completo o una captura.
+    validations:
+      required: true
+  - type: dropdown
+    id: tiempo
+    attributes:
+      label: Tiempo atascado
+      options:
+        - Menos de 2 h
+        - 2 a 4 h
+        - Más de 4 h
+    validations:
+      required: true
