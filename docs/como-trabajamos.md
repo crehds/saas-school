@@ -59,9 +59,20 @@ Las pistas **nunca** te dan el código ni la solución: te señalan qué investi
 - **Horas reales:** las registras en la descripción del PR. Sirven para comparar con la estimación y mejorar los planes, no para evaluarte.
 - **Repositorio público:** nunca subas secretos, contraseñas ni datos reales. Los seeds usan datos ficticios.
 
+## Cómo probar
+
+Las pruebas de tu código son parte de cada subtarea, igual que el código. El responsable escribe las pruebas de punta a punta (Playwright) y las de seguridad, y revisa las tuyas en cada PR.
+
+- **Herramientas:** [Vitest](https://vitest.dev/guide/) para tus pruebas y [Supertest](https://github.com/forwardemail/supertest) para los endpoints de la API.
+- **Qué pruebas:** cada criterio de aceptación de la API o de la lógica (cálculos, validaciones, transformaciones de datos) tiene al menos una prueba, también el escenario de error. Las pantallas no llevan pruebas tuyas: las cubren las pruebas de punta a punta del responsable.
+- **Dónde:** dentro de su carpeta (`api/` o `web/`), en archivos que terminan en `.test.js`.
+- **Cuándo:** ejecuta `npm test` dentro de la carpeta antes de abrir el PR; el CI corre el mismo comando.
+- **Cómo saber si una prueba sirve:** rompe a propósito el código que verifica y comprueba que la prueba falla.
+
 ## Definition of Done
 
 - [ ] Se cumplen todos los criterios de aceptación de la historia.
+- [ ] Cada criterio de aceptación de la API o de la lógica tiene su prueba, incluido el escenario de error, y las pruebas pasan en el CI (ver "Cómo probar").
 - [ ] El CI está en verde.
 - [ ] El deploy de preview funciona y la funcionalidad se puede demostrar.
 - [ ] El PR es pequeño, tiene descripción y cierra su issue.
@@ -73,12 +84,13 @@ Las pistas **nunca** te dan el código ni la solución: te señalan qué investi
 
 ### Rúbrica de revisión
 
-Cada PR se revisa con cinco criterios, con puntaje 1 (No cumple), 2 (Cumple) o 3 (Supera):
+Cada PR se revisa con seis criterios, con puntaje 1 (No cumple), 2 (Cumple) o 3 (Supera):
 
 | Criterio | Qué se mira |
 | --- | --- |
 | Funcionalidad | Se cumplen los criterios de aceptación en el preview |
 | Calidad de código | Nombres claros, capas separadas, código simple |
+| Pruebas | Cada criterio de aceptación de la API o de la lógica tiene su prueba, incluido el escenario de error, y la prueba falla si se rompe el código que verifica |
 | Git y PR | Commits convencionales, descripción completa, PR pequeño |
 | Comunicación | Avisaste de los bloqueos a tiempo y con contexto |
 | Autonomía | Resolviste con las pistas y la documentación |
@@ -118,7 +130,7 @@ Es obligatoria en las historias de autenticación, permisos o datos personales. 
 | Autenticación | Passport (`passport-local`) + `express-session`, con las sesiones guardadas en PostgreSQL |
 | Repositorio | Monorepo `saas-school` con las carpetas `web/` y `api/`, cada una con su `package.json` |
 | Despliegue | Frontend en Cloudflare y API en Railway, con un deploy de preview por PR. La infraestructura la administra el responsable |
-| Pruebas | Las escribe el responsable a partir de los criterios de aceptación y corren en el CI |
+| Pruebas | Las de tu código las escribes tú con Vitest (y Supertest en la API) en cada subtarea; las de punta a punta (Playwright) y las de seguridad las escribe el responsable. Todas corren en el CI |
 
 ## Reglas del dominio
 
