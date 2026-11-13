@@ -110,7 +110,7 @@ Es obligatoria en las historias de autenticación, permisos o datos personales. 
 7. Cada endpoint valida los datos de entrada en el backend.
 8. Los permisos por rol se comprueban en el backend, no solo ocultando botones en el frontend.
 9. Toda consulta de datos del colegio filtra por `school_id`.
-10. Los secretos viven en variables de entorno; el repositorio es público y nunca contiene secretos ni datos reales.
+10. Los secretos viven en variables de entorno; el repositorio es público y nunca contiene secretos ni datos reales. La lista de variables está en [variables-de-entorno.md](variables-de-entorno.md).
 11. Las peticiones que cambian datos están protegidas contra CSRF (peticiones falsificadas desde otro sitio que aprovechan la cookie de sesión), con la estrategia aprobada en E1-H01-T01.
 
 ## Ritmo de seguimiento y cómo pedir ayuda
