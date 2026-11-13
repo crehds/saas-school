@@ -93,21 +93,21 @@ Resultado esperado:
 
 ## 4. El archivo `.env` (desde E0-H03)
 
-La aplicación lee los datos de conexión de variables de entorno. En el repositorio hay dos archivos con roles distintos:
+La aplicación lee los datos de conexión de variables de entorno. En la carpeta `api/` hay dos archivos con roles distintos:
 
 - `.env.example` **se sube**: lista las variables que necesita el proyecto, con valores de ejemplo.
 - `.env` **nunca se sube**: tiene tus valores reales, como la contraseña de la sección 3. `.gitignore` lo excluye.
 
-En la raíz del repositorio, copia el ejemplo y completa `.env` con el usuario, la contraseña y la base de la sección 3:
+Desde la raíz del repositorio, copia el ejemplo y completa `api/.env` con el usuario, la contraseña y la base de la sección 3:
 
 ```powershell
-Copy-Item .env.example .env
+Copy-Item api/.env.example api/.env
 ```
 
-**Comprobación** (debe imprimir `.env`; si no imprime nada, **no hagas commit** y avisa en el issue):
+**Comprobación** (debe imprimir `api/.env`; si no imprime nada, **no hagas commit** y avisa en el issue):
 
 ```powershell
-git check-ignore .env
+git check-ignore api/.env
 ```
 
 ## 5. Migraciones y seeds (desde E0-H04)
