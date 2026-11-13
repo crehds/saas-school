@@ -3,3 +3,9 @@
 
 # Owner's private planning notes: never in this public repo
 odd/
+
+# Dependencies
+node_modules/
+
+# Local environment values: never in this public repo
+.env
