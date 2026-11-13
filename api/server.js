@@ -7,7 +7,10 @@ const fingerprint = (value) =>
 const report = {
   environment: process.env.RAILWAY_ENVIRONMENT_NAME ?? null,
   databaseUrl: fingerprint(process.env.DATABASE_URL),
-  sessionSecret: fingerprint(process.env.SESSION_SECRET)
+  sessionSecret: fingerprint(process.env.SESSION_SECRET),
+  adminInitialPassword: fingerprint(process.env.ADMIN_INITIAL_PASSWORD),
+  loginMaxAttempts: process.env.LOGIN_MAX_ATTEMPTS ?? null,
+  sessionIdleTimeoutMinutes: process.env.SESSION_IDLE_TIMEOUT_MINUTES ?? null
 };
 
 http
